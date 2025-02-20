@@ -16,7 +16,7 @@ const world = worlds.create<
 
 // Szene erstellen und Hintergrundfarbe setzen
 world.scene = new OBC.SimpleScene(components);
-(world.scene.three as THREE.Scene).background = new THREE.Color(0xaaaaaa); // Hintergrundfarbe auf Dunkelgrau setzen
+(world.scene.three as THREE.Scene).background = new THREE.Color(0xaaaaaa);
 
 const viewport = document.createElement("bim-viewport");
 world.renderer = new OBC.SimpleRenderer(components, viewport);
