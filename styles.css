@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+bim-view-cube {
+    --viewcube-background: rgba(100, 100, 100, 0.8); /* Dunkelgrauer Hintergrund */
+    --viewcube-border: 5px solid white; /* Weiße Kontur */
+    --viewcube-text-color: white; /* Textfarbe */
+  }
+  
