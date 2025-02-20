@@ -1,6 +1,7 @@
 import * as BUI from "@thatopen/ui";
 import * as OBC from "@thatopen/components";
 import * as CUI from "@thatopen/ui-obc";
+import * as THREE from "three";
 
 BUI.Manager.init();
 CUI.Manager.init();
@@ -13,7 +14,10 @@ const world = worlds.create<
   OBC.SimpleRenderer
 >();
 
+// Szene erstellen und Hintergrundfarbe setzen
 world.scene = new OBC.SimpleScene(components);
+(world.scene.three as THREE.Scene).background = new THREE.Color(0xaaaaaa); // Hintergrundfarbe auf Dunkelgrau setzen
+
 const viewport = document.createElement("bim-viewport");
 world.renderer = new OBC.SimpleRenderer(components, viewport);
 
@@ -27,6 +31,7 @@ world.camera.controls.addEventListener("update", () =>
   viewCube.updateOrientation(),
 );
 
+
 const app = document.getElementById("app") as BUI.Grid;
 app.layouts = {
   main: {
@@ -39,5 +44,8 @@ app.layouts = {
 
 const grids = components.get(OBC.Grids);
 grids.create(world);
+
+
+
 
 components.init();
