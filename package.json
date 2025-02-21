@@ -17,6 +17,9 @@
     "@thatopen/components": "^2.4.4",
     "@thatopen/ui": "^2.4.2",
     "@thatopen/ui-obc": "^2.4.1",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "mdb-ui-kit": "^8.2.0",
     "three": "0.160.1"
   }
 }
