@@ -2,6 +2,7 @@ import * as BUI from "@thatopen/ui";
 import * as OBC from "@thatopen/components";
 import * as CUI from "@thatopen/ui-obc";
 import * as THREE from "three";
+import { ViewCube } from "./src/viewcube";
 
 BUI.Manager.init();
 CUI.Manager.init();
@@ -23,13 +24,14 @@ world.renderer = new OBC.SimpleRenderer(components, viewport);
 
 world.camera = new OBC.SimpleCamera(components);
 
-const viewCube = document.createElement("bim-view-cube");
-viewCube.camera = world.camera.three;
-viewport.append(viewCube);
+// **Ersetzen von bim-view-cube durch den eigenen ViewCube**
+const viewCube = new ViewCube();
+viewport.append(viewCube.domElement); // Hier wird dein eigener ViewCube ins DOM gehängt
 
-world.camera.controls.addEventListener("update", () =>
-  viewCube.updateOrientation(),
-);
+// ViewCube mit der Kamera synchronisieren
+world.camera.controls.addEventListener("update", () => {
+  viewCube.updateOrientation(world.camera.three.quaternion);
+});
 
 
 const app = document.getElementById("app") as BUI.Grid;
@@ -44,8 +46,5 @@ app.layouts = {
 
 const grids = components.get(OBC.Grids);
 grids.create(world);
-
-
-
 
 components.init();
