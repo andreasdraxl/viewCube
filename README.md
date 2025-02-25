@@ -1,4 +1,4 @@
-# ViewCube is a viewer for IFC files which runs in any webbrowser.
+# ViewCube is a testviewer for IFC files which runs in any webbrowser.
 
 ## Getting Started
 
@@ -23,6 +23,6 @@ Open a terminal window in Visual Studio Code and install:<br>
 Create a folder called "ViewCube" and place the downloaded files inside. Open that folder in in vscode. Open a terminal window in vscode and type: 
 > npm run dev
 >
-A browser showing GetVolume should open. the is based on this tutorial [thatopen]((https://github.com/ThatOpen/engine_ui-components/blob/main/packages/obc/src/core/ViewCube/example.ts)
+A browser showing GetVolume should open. the is based on this tutorial [thatopen](https://github.com/ThatOpen/engine_ui-components/blob/main/packages/obc/src/core/ViewCube/example.ts)
 
 **</>** with 🖤 in [Vienna](https://en.wikipedia.org/wiki/Vienna), Austria
